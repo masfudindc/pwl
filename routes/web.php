@@ -1,5 +1,6 @@
 <?php
 
+namespace  App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,11 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
-Route::get('/template', function () {
-    return view('layouts.template');
-});
+
+
+
+//**Praktikum 2 Pertemuan3 */
+
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/profile', [ProfileController::class, 'index']);
+Route::get('/experience', [ExperienceController::class, 'index']);
