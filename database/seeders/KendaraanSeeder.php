@@ -15,7 +15,6 @@ class KendaraanSeeder extends Seeder
      */
     public function run()
     {
-        //
         DB::table('kendaraan')->insert([
             [
                 'no_pol'=>'M 1 FU',
