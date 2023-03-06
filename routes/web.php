@@ -28,3 +28,5 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/profile', [ProfileController::class, 'index']);
 Route::get('/experience', [ExperienceController::class, 'index']);
+
+Route::get('kendaraan', [KendaraanController::class, 'index']);
