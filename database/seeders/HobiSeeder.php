@@ -18,11 +18,11 @@ class HobiSeeder extends Seeder
         DB::table('hobi')->insert([
             [
                 'nama_hobi' => 'futsal',
-                'alasan' => 'suka dengan olahraga yang berhubungan dengan bola',
+                'alasan' => 'suka dengan olahraga yang berhubungan dengan bola'
             ],
             [
                 'nama_hobi' => 'game mobile',
-                'alasan' => 'suka dengan e-sport',
+                'alasan' => 'suka dengan e-sport'
             ] 
             ]);
     }
