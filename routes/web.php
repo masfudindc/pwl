@@ -1,6 +1,9 @@
 <?php
 
 namespace  App\Http\Controllers;
+
+use App\Http\Controllers\Auth\LoginController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,15 +25,40 @@ use Illuminate\Support\Facades\Route;
 
 
 
-//**Praktikum 2 Pertemuan3 */
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/dashboard', [DashboardController::class, 'index']);
-Route::get('/profile', [ProfileController::class, 'index']);
-Route::get('/experience', [ExperienceController::class, 'index']);
+//**Praktikum 6 Pertemuan 6 */
+Auth::routes();
 
-Route::get('kendaraan', [KendaraanController::class, 'index']);
+Route::get('logout', [LoginController::class, 'logout']);
 
-Route::get('hobi', [HobiController::class, 'index']);
-Route::get('keluarga', [KeluargaController::class, 'index']);
-Route::get('mata-kuliah', [MatkulController::class, 'index']);
+Route::middleware(['auth'])->group(function(){
+
+    Route::get('/', [HomeController::class, 'index']);
+    Route::get('/dashboard', [DashboardController::class, 'index']);
+    Route::get('/profile', [ProfileController::class, 'index']);
+    Route::get('/experience', [ExperienceController::class, 'index']);
+
+    Route::get('kendaraan', [KendaraanController::class, 'index']);
+
+    Route::get('hobi', [HobiController::class, 'index']);
+    Route::get('keluarga', [KeluargaController::class, 'index']);
+    Route::get('mata-kuliah', [MatkulController::class, 'index']);
+
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});
+
+
+// //**Praktikum 2 Pertemuan3 */
+// Route::get('/', [HomeController::class, 'index']);
+// Route::get('/dashboard', [DashboardController::class, 'index']);
+// Route::get('/profile', [ProfileController::class, 'index']);
+// Route::get('/experience', [ExperienceController::class, 'index']);
+
+// Route::get('kendaraan', [KendaraanController::class, 'index']);
+
+// Route::get('hobi', [HobiController::class, 'index']);
+// Route::get('keluarga', [KeluargaController::class, 'index']);
+// Route::get('mata-kuliah', [MatkulController::class, 'index']);
+
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
