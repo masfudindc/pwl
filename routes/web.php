@@ -29,26 +29,20 @@ use Illuminate\Support\Facades\Route;
 //**Praktikum 6 Pertemuan 6 */
 Auth::routes();
 
-Route::get('logout', [LoginController::class, 'logout']);
+Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::middleware(['auth'])->group(function(){
-
     Route::get('/', [HomeController::class, 'index']);
     Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::get('/profile', [ProfileController::class, 'index']);
     Route::get('/experience', [ExperienceController::class, 'index']);
-
-    Route::get('kendaraan', [KendaraanController::class, 'index']);
-
-    Route::get('hobi', [HobiController::class, 'index']);
-    Route::get('keluarga', [KeluargaController::class, 'index']);
-    Route::get('mata-kuliah', [MatkulController::class, 'index']);
-
+    Route::get('/kendaraan', [KendaraanController::class, 'index']);
+    Route::get('/hobi', [HobiController::class, 'index']);
+    Route::get('/keluarga', [KeluargaController::class, 'index']);
+    Route::get('/mata-kuliah', [MatkulController::class, 'index']);
 
     //**Pertemuan 8 */
-    Route::resource('mahasiswa', MahasiswaController::class);
-
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::resource('/mahasiswa', MahasiswaController::class)->parameter('mahasiswa', 'id');
 });
 
 

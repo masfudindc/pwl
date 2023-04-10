@@ -58,13 +58,12 @@
                 <td>{{$m->jk}}</td>
                 <td>{{$m->hp}}</td>
                 <td>
-                  {{-- Bikin tombol edit dan delete --}}
-                  <a href="{{url('/mahasiswa/'. $m->id.'/edit')}}" class="btn btn-sm btn-warning">Edit</a>
+                  <a href="{{url('/mahasiswa/'. $m->id . '/edit')}}" class="btn btn-sm btn-warning">Edit</a>
 
-                  <form method="POST" action="{{ url('/mahasiswa/'.$m->id) }}">
+                  <form method="POST" action="{{ url('/mahasiswa/' . $m->id) }}">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                    <button type="submit"  class="btn btn-sm btn-danger">Hapus</button>
                   </form>
 
                 </td>

@@ -43,7 +43,7 @@ class MahasiswaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nim' => 'required|string|max:10|unique:mahasiswa,nim,',
+            'nim' => 'required|string|max:10|unique:mahasiswa,nim',
             'nama' => 'required|string|max:50',
             'jk' => 'required|in:L,P,l,p',
             'tempat_lahir' => 'required|string|max:50',
@@ -53,11 +53,9 @@ class MahasiswaController extends Controller
         ]);
 
         $data = MahasiswaModel::create($request->except(['_token']));
-        //jika berhasil akan kembali ke halaman mahasiswa
+
         return redirect('mahasiswa')
-        ->with ('success', 'Data Mahasiswa Berhasil Ditambahkan');
-
-
+                ->with('success', 'Data Mahasiswa Berhasil Ditambahkan');
     }
 
     /**
@@ -81,7 +79,7 @@ class MahasiswaController extends Controller
     {
         $mahasiswa = MahasiswaModel::find($id);
         return view('mahasiswa.create_mahasiswa')
-        ->with('$mhs', $mahasiswa)
+        ->with('mhs', $mahasiswa)
         ->with('url_form', url('/mahasiswa/'.$id));
     }
 
@@ -95,7 +93,7 @@ class MahasiswaController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nim' => 'required|string|max:10|unique:mahasiswa,nim,'.$id,
+            'nim' => 'required|string|max:10|unique:mahasiswa,nim,' . $id,
             'nama' => 'required|string|max:50',
             'jk' => 'required|in:L,P,l,p',
             'tempat_lahir' => 'required|string|max:50',

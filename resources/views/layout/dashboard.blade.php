@@ -1,7 +1,7 @@
 @extends('layout.template')
 
 @section('content')
-<script>alert('Selamat Datang!!!')</script>
+{{-- <script>alert('Selamat Datang!!!')</script> --}}
 <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">

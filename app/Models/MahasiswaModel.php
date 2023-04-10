@@ -11,6 +11,7 @@ class MahasiswaModel extends Model
     protected $table = 'mahasiswa';
     // protected $primaryKey = $id;
     // protected $ketTipe = int;
+    
     protected $fillable = [
         'nim',
         'nama',
