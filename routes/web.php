@@ -41,7 +41,6 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/keluarga', [KeluargaController::class, 'index']);
     Route::get('/mata-kuliah', [MatkulController::class, 'index']);
 
-    //**Pertemuan 8 */
     Route::resource('/mahasiswa', MahasiswaController::class)->parameter('mahasiswa', 'id');
 });
 

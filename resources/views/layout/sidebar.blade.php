@@ -87,6 +87,13 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{ url('/perusahaan') }}" class="nav-link">
+                        <i class="nav-icon fas fa-file"></i>
+                        <p>Perusahaan</p>
+                    </a>
+                </li>
+
 
                 <li class="nav-item">
                     <a href="{{ url('/logout') }}" class="nav-link">
