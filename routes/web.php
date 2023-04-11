@@ -21,11 +21,6 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-
-
-
-
-
 //**Praktikum 6 Pertemuan 6 */
 Auth::routes();
 
@@ -40,18 +35,3 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('/perusahaan', PerusahaanController::class)->parameter('perusahaan', 'id');
 });
 
-
-// //**Praktikum 2 Pertemuan3 */
-// Route::get('/', [HomeController::class, 'index']);
-// Route::get('/dashboard', [DashboardController::class, 'index']);
-// Route::get('/profile', [ProfileController::class, 'index']);
-// Route::get('/experience', [ExperienceController::class, 'index']);
-
-// Route::get('kendaraan', [KendaraanController::class, 'index']);
-
-// Route::get('hobi', [HobiController::class, 'index']);
-// Route::get('keluarga', [KeluargaController::class, 'index']);
-// Route::get('mata-kuliah', [MatkulController::class, 'index']);
-
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
