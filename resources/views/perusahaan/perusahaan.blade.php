@@ -60,7 +60,7 @@
                 <td>
                   <a href="{{url('/perusahaan/'. $p->id . '/edit')}}" class="btn btn-sm btn-warning">Edit</a>
 
-                  <form method="POST" action="{{ url('/perusahaan/' . $m->id) }}">
+                  <form method="POST" action="{{ url('/perusahaan/' . $p->id) }}">
                     @csrf
                     @method('DELETE')
                     <button type="submit"  class="btn btn-sm btn-danger">Hapus</button>

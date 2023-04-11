@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama', 50)->nullable();
             $table->string('website',50)->nullable()->unique();
-            $table->date('email')->nullable()->unique();
+            $table->string('email')->nullable()->unique();
             $table->string('alamat')->nullable();
             $table->timestamps();
         });

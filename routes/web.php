@@ -32,16 +32,12 @@ Auth::routes();
 Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::middleware(['auth'])->group(function(){
-    Route::get('/', [HomeController::class, 'index']);
+    Route::get('/', [DashboardController::class, 'index']);
     Route::get('/dashboard', [DashboardController::class, 'index']);
-    Route::get('/profile', [ProfileController::class, 'index']);
-    Route::get('/experience', [ExperienceController::class, 'index']);
-    Route::get('/kendaraan', [KendaraanController::class, 'index']);
-    Route::get('/hobi', [HobiController::class, 'index']);
-    Route::get('/keluarga', [KeluargaController::class, 'index']);
-    Route::get('/mata-kuliah', [MatkulController::class, 'index']);
 
     Route::resource('/mahasiswa', MahasiswaController::class)->parameter('mahasiswa', 'id');
+
+    Route::resource('/perusahaan', PerusahaanController::class)->parameter('perusahaan', 'id');
 });
 
 

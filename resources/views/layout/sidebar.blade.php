@@ -33,8 +33,6 @@
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <!-- Add icons to the links using the .nav-icon class
-                     with font-awesome or any other icon font library -->
 
                 <li class="nav-item">
                     <a href="{{ url('/dashboard') }}" class="nav-link">
@@ -46,54 +44,11 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ url('/profile') }}" class="nav-link">
-                        <i class="nav-icon fas fa-ellipsis-h"></i>
-                        <p>Profile</p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{ url('/experience') }}" class="nav-link">
-                        <i class="nav-icon fas fa-file"></i>
-                        <p>Pengalaman Kuliah</p>
-                    </a>
-                </li>
-                
-                <li class="nav-item">
-                    <a href="{{ url('/hobi') }}" class="nav-link">
-                        <i class="nav-icon fas fa-file"></i>
-                        <p>Hobi</p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{ url('/keluarga') }}" class="nav-link">
-                        <i class="nav-icon fas fa-file"></i>
-                        <p>Keluarga</p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{ url('/mata-kuliah') }}" class="nav-link">
-                        <i class="nav-icon fas fa-file"></i>
-                        <p>Mata Kuliah</p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{ url('/mahasiswa') }}" class="nav-link">
-                        <i class="nav-icon fas fa-file"></i>
-                        <p>Mahasiswa</p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
                     <a href="{{ url('/perusahaan') }}" class="nav-link">
                         <i class="nav-icon fas fa-file"></i>
                         <p>Perusahaan</p>
                     </a>
                 </li>
-
 
                 <li class="nav-item">
                     <a href="{{ url('/logout') }}" class="nav-link">
@@ -106,6 +61,14 @@
             
         </nav>
         <!-- /.sidebar-menu -->
+
+        {{-- sidebar logout --}}
+        <div class="mt-3 pb-3 mb-3 d-flex fixed-bottom">
+            <a href="{{ url('/logout')}}" class="nav-link">
+                <p>Logout</p>
+            </a>
+        </div>
+
     </div>
     <!-- /.sidebar -->
 </aside>
